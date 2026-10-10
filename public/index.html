@@ -992,6 +992,106 @@
       .direction-option>span{padding-inline:7px;gap:5px}
     }
 </style>
+<style id="mobile-product-layout">
+    .sd-tab-label-short{display:none}
+    @media(max-width:1000px){
+      .product{padding-bottom:0}
+      .product .product-panel{width:100%;max-width:none;margin-inline:0;padding:0;overflow:visible}
+      .product .product-panel>div:first-child{align-items:flex-start;padding:0 24px;text-align:left}
+      .product .product-panel h2{max-width:640px}
+      .product .product-panel .intro{max-width:620px;margin-top:14px;font-size:16px;line-height:1.6}
+      .product .product-showcase.sd-showcase{width:100%;margin-top:24px}
+      .product .sd-app{--sd-mobile-header:69px;display:grid;grid-template-rows:auto minmax(0,1fr);width:100%;height:calc(100vh - var(--sd-mobile-header));height:calc(100svh - var(--sd-mobile-header));min-height:0;max-height:none;border:0;border-block:1px solid #2c3543;border-radius:0;background:#0f141d;font-size:15px}
+      .product .sd-topbar{min-height:64px;padding:12px 24px;gap:12px;background:#141c28}
+      .product .sd-brand{gap:9px;font-size:20px}
+      .product .sd-brand img{width:24px;height:26px}
+      .product .sd-brand-sub{display:none}
+      .product .sd-demo-link{min-height:44px;padding:10px 12px;font-size:12px;border-radius:10px}
+      .product .sd-layout{display:grid;grid-template-columns:minmax(0,1fr);height:auto;min-height:0}
+      .product .sd-sidebar{display:none}
+      .product .sd-main{display:grid;grid-template-rows:auto minmax(0,1fr);min-width:0;min-height:0;overflow:hidden}
+      .product .sd-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding:8px 24px;border-color:#283445;background:#141c28}
+      .product .sd-tabs button{min-width:0;min-height:46px;padding:10px 8px;gap:7px;border-radius:10px;font-size:14px;line-height:1.3;white-space:nowrap}
+      .product .sd-tabs button[aria-selected=true]{background:#213654;border-color:#456690;color:#c6ddff}
+      .product .sd-tabs .sd-icon{display:block;width:17px;height:17px}
+      .product .sd-tab-label-long{display:none}
+      .product .sd-tab-label-short{display:inline}
+      .product .sd-panels{min-width:0;min-height:0;overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+      .product .sd-panel{width:100%;height:auto;min-height:100%;padding:24px 24px calc(24px + env(safe-area-inset-bottom));overflow:visible}
+      .product .sd-panel-heading h3{font-size:23px;line-height:1.3}
+      .product .sd-panel-heading p{display:none}
+      .product .sd-file-tools{grid-template-columns:minmax(0,1fr) minmax(180px,.65fr);gap:12px;margin-top:18px}
+      .product .sd-search,.product .sd-app .sd-category select{height:48px;min-height:48px;border-radius:10px;background:#192330;border-color:#344155}
+      .product .sd-app .sd-search input,.product .sd-app .sd-category select{font-size:16px}
+      .product .sd-file-count{padding:16px 0 12px;font-size:13px}
+      .product .sd-file-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-height:none;overflow:visible}
+      .product .sd-file-card{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 12px;align-content:center;min-width:0;min-height:84px;padding:14px;background:#18212e;border-color:#2c3a4d;border-radius:12px}
+      .product .sd-file-top{display:contents}
+      .product .sd-file-type{display:grid;grid-column:1;grid-row:1/span 2;place-items:center;align-self:center;width:44px;height:44px;padding:0;border-radius:9px;font-size:10px}
+      .product .sd-ready{display:none}
+      .product .sd-file-card h4{grid-column:2;min-width:0;min-height:0;font-size:15px;line-height:1.4;font-weight:500}
+      .product .sd-file-card p{grid-column:2;margin:0;font-size:12px;line-height:1.5;color:#a4b2c5}
+      .product .sd-file-card p .sd-icon{width:13px;height:13px}
+      .product .sd-empty{font-size:15px;line-height:1.6}
+      .product .sd-scope{gap:7px;font-size:12px;margin-bottom:16px}
+      .product .sd-scope>span{flex-basis:100%;margin:0;color:#9caec6;font-size:12px}
+      .product .sd-question{width:fit-content;max-width:100%;padding:16px;border-radius:14px 14px 3px 14px;font-size:15px;line-height:1.6}
+      .product .sd-answer{margin-top:24px;font-size:15px;line-height:1.65}
+      .product .sd-assistant{font-size:14px;margin-bottom:14px}
+      .product .sd-answer-table,.product .sd-answer-table tbody{display:block;width:100%}
+      .product .sd-answer-table{margin-top:18px;font-size:14px}
+      .product .sd-answer-table thead{display:none}
+      .product .sd-answer-table tr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 12px;padding:16px;margin-top:10px;border:1px solid #2c3a4d;border-radius:12px;background:#18212e}
+      .product .sd-answer-table td{display:block;min-width:0;border:0;padding:0;vertical-align:top}
+      .product .sd-answer-table td:first-child{grid-column:1/-1;width:auto;padding:0;font-size:15px;line-height:1.5;font-weight:500}
+      .product .sd-answer-table td:nth-child(2){color:#aebdd0;font-size:13px;line-height:1.5}
+      .product .sd-answer-table td:last-child{align-self:end;padding:4px 8px;border-radius:6px;background:#263d5e;color:#c4ddff;font-size:12px;line-height:1.4;white-space:nowrap}
+      .product .sd-answer-bottom{margin-top:20px!important}
+      .product .sd-citation{gap:12px;min-height:76px;margin-top:20px;padding:16px 14px;border-radius:12px;background:#1c2c42;border-color:#3d587c}
+      .product .sd-citation strong{font-size:14px;line-height:1.45}
+      .product .sd-citation small{font-size:12px;line-height:1.5;margin-top:5px}
+      .product .sd-back{font-size:14px!important;margin:0 0 18px;min-height:44px}
+      .product .sd-source-title{gap:12px;padding-bottom:18px}
+      .product .sd-source-title h3{font-size:19px;line-height:1.4}
+      .product .sd-source-title p{font-size:13px}
+      .product .sd-source-text{padding:20px 18px;margin-top:20px;border-radius:0 12px 12px 0;background:#19283c;font-size:15px;line-height:1.75}
+      .product .sd-source-kicker{font-size:12px}
+      .product .sd-source-text h4{font-size:20px;line-height:1.35}
+    }
+    @media(max-width:600px){
+      .product .product-panel>div:first-child{padding-inline:16px}
+      .product .product-panel h2{font-size:30px;line-height:1.12}
+      .product .product-panel .intro{font-size:15px}
+      .product .product-showcase.sd-showcase{margin-top:22px}
+      .product .sd-app{--sd-mobile-header:65px}
+      .product .sd-topbar{min-height:60px;padding:10px 16px;gap:8px}
+      .product .sd-brand{font-size:19px;gap:8px}
+      .product .sd-demo-link{font-size:11px;padding-inline:10px;gap:5px}
+      .product .sd-tabs{padding:6px 12px 10px;gap:4px}
+      .product .sd-tabs button{min-height:44px;padding:9px 5px;font-size:13px}
+      .product .sd-tabs .sd-icon{display:none}
+      .product .sd-panel{padding:20px 16px calc(24px + env(safe-area-inset-bottom))}
+      .product .sd-panel-heading h3{font-size:22px}
+      .product .sd-file-tools{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:16px}
+      .product .sd-file-grid{grid-template-columns:minmax(0,1fr);gap:8px}
+      .product .sd-file-card{min-height:80px;padding:12px;gap:3px 12px}
+      .product .sd-answer-table tr{padding:14px}
+    }
+    @media(max-width:360px){
+      .product .sd-topbar{padding-inline:12px}
+      .product .sd-brand{font-size:18px;gap:7px}
+      .product .sd-demo-link{font-size:11px;padding-inline:9px}
+      .product .sd-panel{padding-inline:14px}
+      .product .sd-tabs button{font-size:12px}
+    }
+    @media(max-width:1000px) and (max-height:500px) and (orientation:landscape){
+      .product .sd-topbar{min-height:54px;padding-block:6px}
+      .product .sd-tabs{padding-block:4px}
+      .product .sd-tabs button{min-height:40px;padding-block:8px}
+      .product .sd-panel{padding-top:16px}
+      .product .sd-file-tools{grid-template-columns:minmax(0,1fr) minmax(150px,.65fr);margin-top:12px}
+    }
+</style>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -1049,7 +1149,7 @@
   <div class="sd-layout">
     <aside class="sd-sidebar" aria-label="Папки документов"><div class="sd-sidebar-heading">База знаний</div><button class="sd-all is-active" type="button" data-sd-folder=""><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Вся база</span><span class="sd-folder-count">12</span></button><div class="sd-sidebar-heading sd-folders-heading">Папки</div><div class="sd-folders"><button type="button" data-sd-folder="Проекты" title="Проекты"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Проекты</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Право и договоры" title="Право и договоры"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Право и договоры</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Финансы" title="Финансы"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Финансы</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Строительство" title="Строительство"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Строительство</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Производство" title="Производство"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Производство</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Образование" title="Образование"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Образование</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Медицина" title="Медицина"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Медицина</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Логистика" title="Логистика"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Логистика</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Недвижимость" title="Недвижимость"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Недвижимость</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="Продажи" title="Продажи"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>Продажи</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="IT и интеграции" title="IT и интеграции"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>IT и интеграции</span><span class="sd-folder-count">1</span></button><button type="button" data-sd-folder="HR" title="HR"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg><span>HR</span><span class="sd-folder-count">1</span></button></div></aside>
     <div class="sd-main">
-      <div class="sd-tabs" role="tablist" aria-label="Демонстрация работы продукта"><button type="button" role="tab" id="sd-tab-files" aria-controls="sd-panel-files" aria-selected="false" tabindex="-1" data-sd-view="files"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Документы</button><button type="button" role="tab" id="sd-tab-answer" aria-controls="sd-panel-answer" aria-selected="true" data-sd-view="answer"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5a8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8Z"/></svg>Вопрос и ответ</button><button type="button" role="tab" id="sd-tab-source" aria-controls="sd-panel-source" aria-selected="false" tabindex="-1" data-sd-view="source"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 13 4-4m-6 6-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 3 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/></svg>Источник</button></div>
+      <div class="sd-tabs" role="tablist" aria-label="Демонстрация работы продукта"><button type="button" role="tab" id="sd-tab-files" aria-controls="sd-panel-files" aria-selected="false" tabindex="-1" data-sd-view="files"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg>Документы</button><button type="button" role="tab" id="sd-tab-answer" aria-controls="sd-panel-answer" aria-selected="true" data-sd-view="answer"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5a8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8Z"/></svg><span class="sd-tab-label-long">Вопрос и ответ</span><span class="sd-tab-label-short">Ответ</span></button><button type="button" role="tab" id="sd-tab-source" aria-controls="sd-panel-source" aria-selected="false" tabindex="-1" data-sd-view="source"><svg class="sd-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 13 4-4m-6 6-1 1a4 4 0 0 1-6-6l4-4a4 4 0 0 1 6 0m2 3 1-1a4 4 0 0 1 6 6l-4 4a4 4 0 0 1-6 0"/></svg>Источник</button></div>
       <div class="sd-panels">
         <section class="sd-panel sd-panel-files" id="sd-panel-files" role="tabpanel" aria-labelledby="sd-tab-files" hidden>
           <div class="sd-panel-heading"><h3>Ваши документы</h3><p>Материалы из разных отраслей — в одной базе.</p></div>
@@ -1154,10 +1254,10 @@
       const sdRoot=document.querySelector('.sd-app');
       const sdTabs=Array.from(sdRoot.querySelectorAll('[data-sd-view]'));
       const sdPanels=Array.from(sdRoot.querySelectorAll('[role="tabpanel"]'));
-      function sdShow(view,focus=false){sdTabs.forEach(tab=>{const active=tab.dataset.sdView===view;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;if(active&&focus)tab.focus();});sdPanels.forEach(panel=>{panel.hidden=panel.id!=='sd-panel-'+view;});}
+      function sdShow(view,focus=false){sdTabs.forEach(tab=>{const active=tab.dataset.sdView===view;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;if(active&&focus)tab.focus();});sdPanels.forEach(panel=>{panel.hidden=panel.id!=='sd-panel-'+view;});sdRoot.querySelector('.sd-panels').scrollTop=0;}
       sdTabs.forEach((tab,index)=>{tab.addEventListener('click',()=>sdShow(tab.dataset.sdView));tab.addEventListener('keydown',event=>{let next;if(event.key==='ArrowRight')next=(index+1)%sdTabs.length;if(event.key==='ArrowLeft')next=(index+sdTabs.length-1)%sdTabs.length;if(event.key==='Home')next=0;if(event.key==='End')next=sdTabs.length-1;if(next!==undefined){event.preventDefault();sdShow(sdTabs[next].dataset.sdView,true);}});});
       sdRoot.querySelector('[data-sd-source]').addEventListener('click',event=>{event.preventDefault();sdShow('source');sdRoot.querySelector('#sd-source-heading').focus({preventScroll:true});});
-      sdRoot.querySelector('[data-sd-back]').addEventListener('click',()=>{sdShow('answer');sdRoot.querySelector('#sd-citation').focus({preventScroll:true});});
+      sdRoot.querySelector('[data-sd-back]').addEventListener('click',()=>{sdShow('answer');sdRoot.querySelector('#sd-citation').focus();});
       const sdSearch=sdRoot.querySelector('#sd-search'),sdCategory=sdRoot.querySelector('#sd-category'),sdFiles=Array.from(sdRoot.querySelectorAll('[data-sd-file]')),sdFolders=Array.from(sdRoot.querySelectorAll('[data-sd-folder]'));
       const sdNormalize=value=>value.toLocaleLowerCase('ru').replaceAll('ё','е').trim();
       function sdFilter(){const query=sdNormalize(sdSearch.value),category=sdCategory.value;let count=0;sdFiles.forEach(file=>{const match=(!category||file.dataset.sdCategory===category)&&sdNormalize(file.dataset.sdFile).includes(query);file.hidden=!match;if(match)count++;});sdRoot.querySelector('#sd-file-count').textContent='Найдено документов: '+count;sdRoot.querySelector('#sd-empty').hidden=count!==0;sdFolders.forEach(folder=>folder.classList.toggle('is-active',folder.dataset.sdFolder===category));}
