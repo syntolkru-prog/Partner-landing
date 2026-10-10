@@ -597,13 +597,6 @@
     .calc-result{margin-top:13px;padding-top:13px}
     .calc-result output{font-size:42px}
     .calc-note{display:none}
-    .promotion-panel.photo-story{min-height:380px;border-radius:24px}
-    .promotion-panel.photo-story::after{background:linear-gradient(180deg,#07142670,#071426d9)}
-    .promotion-panel>img{object-position:center}
-    .promotion-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px 48px;padding:42px}
-    .promotion-list h3{color:#fff;font-size:23px;line-height:1.25;margin-bottom:10px;letter-spacing:-.025em}
-    .promotion-list p{color:#f0f3f8;font-size:15px;line-height:1.65;max-width:470px}
-    .promotion-note{max-width:800px;margin:20px auto 0;text-align:center;font-size:14px;color:var(--muted)}
     .application .field-help{font-size:12px;line-height:1.5;color:var(--muted)}
     .form-trap{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
     .form-status{font-size:14px;line-height:1.65;margin-top:15px;overflow-wrap:anywhere}
@@ -613,7 +606,7 @@
     .form-fallback{font-size:14px;line-height:1.6;margin-top:8px}
     .form-fallback a{text-decoration:underline;text-underline-offset:3px;color:var(--blue)}
     .application button[disabled]{opacity:.7;cursor:wait}
-    @media(max-width:1000px){.product-panel{padding:32px}.promotion-list{padding:32px;gap:28px 32px}}
+    @media(max-width:1000px){.product-panel{padding:32px}}
     @media(max-width:760px){
       .product-panel{padding:28px 20px}
       .product-showcase{margin-top:24px;border-radius:14px}
@@ -627,16 +620,10 @@
       .audience-grid .story-copy{padding:26px}
       .audience-grid .story-copy h3{font-size:24px}
       .reward-section{padding-bottom:54px}
-      .promotion-panel.photo-story{min-height:0;border-radius:22px}
-      .promotion-panel>img{object-position:42% center}
-      .promotion-list{grid-template-columns:1fr;gap:25px;padding:28px}
-      .promotion-list h3{font-size:22px;margin-bottom:8px}
-      .promotion-list p{font-size:15px;line-height:1.65}
-      .promotion-note{font-size:13px;text-align:left;margin-top:16px}
     }
     @media(max-width:1000px){.reward-panel{gap:30px;padding:34px 30px}}
     @media(max-width:760px){.reward-panel{max-width:none;width:100%;grid-template-columns:1fr;gap:24px;min-height:0;padding:30px 22px;background-image:linear-gradient(180deg,rgba(3,15,35,.68),rgba(3,15,35,.48)),url('Syntolk-partners-assets/asset-c25fef1f08e6.webp');background-position:58% center}.reward-intro h2{max-width:560px}.calculator{max-width:none;width:100%;justify-self:stretch;padding:20px}}
-    @media(max-width:390px){.product-panel{padding:25px 16px}.product-screen-tabs button{font-size:12px}.audience-grid .story-copy{padding:23px}.promotion-list{padding:25px}}
+    @media(max-width:390px){.product-panel{padding:25px 16px}.product-screen-tabs button{font-size:12px}.audience-grid .story-copy{padding:23px}}
   </style>
 <style id="syntolk-html-demo">
 .sd-app,.sd-app *{box-sizing:border-box}
@@ -767,12 +754,12 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Syntolk — партнёрская программа"><img src="Syntolk-partners-assets/asset-743472c279dd.webp" alt="" width="26" height="29">Syntolk<span class="brand-label">Партнёрам</span></a>
-      <nav class="nav" aria-label="Основная навигация"><a href="#community">Программа</a><a href="#audiences">Для кого</a><a href="#how-it-works">Продвижение</a><a href="#rewards">Вознаграждение</a></nav>
+      <nav class="nav" aria-label="Основная навигация"><a href="#community">Программа</a><a href="#audiences">Для кого</a><a href="#rewards">Вознаграждение</a></nav>
       <a class="btn btn-primary header-cta" href="#join">Стать партнёром</a>
       <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav"><svg class="icon" aria-hidden="true"><use href="#menu"/></svg></button>
     </div>
   </header>
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" inert><a href="#community">Программа</a><a href="#audiences">Для кого</a><a href="#how-it-works">Продвижение</a><a href="#rewards">Вознаграждение</a><a href="#faq">Вопросы и ответы</a></nav>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" inert><a href="#community">Программа</a><a href="#audiences">Для кого</a><a href="#rewards">Вознаграждение</a><a href="#faq">Вопросы и ответы</a></nav>
   <main id="main">
     <section class="hero hero-immersive hero-partner-hero" id="top" aria-labelledby="hero-title">
       <div class="hero-stage">
@@ -844,20 +831,7 @@
         </div>
       </div>
     </section>
-        <section class="section process" id="how-it-works" aria-labelledby="process-title">
-      <div class="container">
-        <div class="section-heading"><h2 id="process-title">Как привлекать клиентов</h2></div>
-        <div class="promotion-panel photo-story"><img src="Syntolk-partners-assets/asset-c25fef1f08e6.webp" alt="" width="2167" height="726" loading="lazy">
-          <div class="promotion-list">
-            <article><h3>Публикации и обзоры</h3><p>Рассказывайте о Syntolk в Telegram, блоге или на профильном сайте. Добавляйте партнёрскую ссылку.</p></article>
-            <article><h3>Личные рекомендации</h3><p>Предлагайте продукт на консультациях и встречах с клиентами, которым он поможет в работе.</p></article>
-            <article><h3>Видео и демонстрации</h3><p>Показывайте работу с документами: вопрос, полученный ответ и источники, на которые он опирается.</p></article>
-            <article><h3>Внедрение в компании</h3><p>Включайте Syntolk в проекты по консалтингу, настройке CRM и автоматизации процессов.</p></article>
-          </div>
-        </div>
-        <p class="promotion-note">Публикации и видео продолжают знакомить людей с продуктом и после выхода.</p>
-      </div>
-    </section>
+
 <section class="section faq" id="faq" aria-labelledby="faq-title">
       <div class="container faq-layout"><div class="faq-intro"><h2 id="faq-title">Перед началом работы</h2></div><div class="faq-list">
         <details><summary>Как клиент будет закреплён за мной?</summary><p>До начала продвижения согласуем партнёрскую ссылку и правила учёта привлечённых клиентов. Обсудим и случаи, когда вы приводите заказчика лично или через внедрение.</p></details>
