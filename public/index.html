@@ -586,10 +586,12 @@
     .audience-grid .story-copy{padding:28px}
     .audience-grid .story-copy h3{font-size:25px;line-height:1.25}
     .audience-grid .story-copy p{font-size:15px;line-height:1.65}
-    .reward-section{padding-top:12px;padding-bottom:40px}
-    .reward-panel{max-width:980px;grid-template-columns:minmax(0,1fr) minmax(320px,.82fr);gap:28px;padding:22px 26px}
-    .reward-intro>p{margin-top:14px;font-size:15px;line-height:1.55}
-    .calculator{max-width:440px;justify-self:end;padding:16px 18px;border-radius:16px}
+    .reward-section{padding-top:18px;padding-bottom:56px}
+    .reward-panel{position:relative;isolation:isolate;max-width:1200px;grid-template-columns:minmax(0,1fr) minmax(340px,440px);gap:52px;min-height:430px;padding:44px 50px;border:0;border-radius:26px;background:linear-gradient(90deg,#03192a42,#03192a12 58%,#03192a3d),url('Syntolk-partners-assets/asset-c25fef1f08e6.webp') center/cover no-repeat;box-shadow:0 24px 60px #0d234222}
+    .reward-intro{position:relative;z-index:1;max-width:520px}
+    .reward-intro h2{max-width:520px;color:#fff;text-shadow:0 2px 14px #001a3855}
+    .reward-intro>p{margin-top:14px;max-width:490px;color:#f7fbff;font-size:16px;line-height:1.6;text-shadow:0 2px 10px #001a3855}
+    .calculator{max-width:440px;justify-self:end;padding:18px 20px;border-radius:18px;background:#fff;box-shadow:0 18px 46px #061b3538}
     .calc-heading{margin-bottom:11px}
     .calc-field{margin-bottom:11px}
     .calc-result{margin-top:13px;padding-top:13px}
@@ -632,7 +634,8 @@
       .promotion-list p{font-size:15px;line-height:1.65}
       .promotion-note{font-size:13px;text-align:left;margin-top:16px}
     }
-    @media(max-width:760px){.reward-panel{max-width:none;width:100%;grid-template-columns:1fr;gap:24px;padding:22px}.calculator{max-width:none;width:100%;justify-self:stretch;padding:20px}}
+    @media(max-width:1000px){.reward-panel{gap:30px;padding:34px 30px}}
+    @media(max-width:760px){.reward-panel{max-width:none;width:100%;grid-template-columns:1fr;gap:24px;min-height:0;padding:30px 22px;background-image:linear-gradient(180deg,#03192a82,#03192a5c),url('Syntolk-partners-assets/asset-c25fef1f08e6.webp');background-position:58% center}.reward-intro h2{max-width:560px}.calculator{max-width:none;width:100%;justify-self:stretch;padding:20px}}
     @media(max-width:390px){.product-panel{padding:25px 16px}.product-screen-tabs button{font-size:12px}.audience-grid .story-copy{padding:23px}.promotion-list{padding:25px}}
   </style>
 <style id="syntolk-html-demo">
