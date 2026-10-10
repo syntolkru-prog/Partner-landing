@@ -15,8 +15,8 @@ function setup({ protocol = 'https:', fetch: send = async () => ({ ok: true, jso
     addEventListener(type, callback) { this.events[type] = callback; }
     setAttribute(key, value) { this.attrs[key] = value; }
     removeAttribute(key) { delete this.attrs[key]; }
-    querySelectorAll() { return this.children; }
-    querySelector() { return this.children[0]; }
+    querySelectorAll(selector) { const tags = selector.split(',').map(tag => tag.trim().toUpperCase()); return this.children.filter(child => tags.includes(child.tagName)); }
+    querySelector(selector) { return this.querySelectorAll(selector)[0]; }
     focus() { focused = this; }
     async fire(type) { await this.events[type]?.({ preventDefault() {} }); }
   }
@@ -24,20 +24,20 @@ function setup({ protocol = 'https:', fetch: send = async () => ({ ok: true, jso
   const ids = new Map(), groups = {}, fields = {};
   const form = new Element({ dataset: { endpoint: '/api/partner-applications' } });
   for (const key of [...keys, 'website']) {
-    fields[key] = key === 'direction' ? ['Автор или блогер', 'CRM-интеграция и автоматизация'].map(value => new Element({ value })) : [new Element()];
+    fields[key] = [new Element({ tagName: key === 'direction' ? 'SELECT' : key === 'audience' ? 'TEXTAREA' : 'INPUT' })];
     if (key !== 'website') { groups[key] = new Element({ children: fields[key] }); ids.set(key + '-error', new Element({ hidden: true })); }
   }
   const submit = new Element({ disabled: true });
   ids.set('partner-form', form); ids.set('form-status', new Element()); ids.set('form-fallback', new Element({ hidden: true })); ids.set('application-email', new Element()); ids.set('application-submit-label', new Element());
   form.children = Object.values(fields).flat();
   form.querySelector = selector => selector === '[type="submit"]' ? submit : selector === '[name="consent"]' ? fields.consent[0] : groups[selector.match(/data-field="(.*?)"/)[1]];
-  form.reset = () => { for (const [key, controls] of Object.entries(fields)) for (const control of controls) { if (key !== 'direction') control.value = ''; control.checked = false; } };
+  form.reset = () => { for (const controls of Object.values(fields)) for (const control of controls) { control.value = ''; control.checked = false; } };
   class FormData {
-    get(key) { if (key === 'direction') return fields[key].find(control => control.checked && !control.disabled)?.value || null; const control = fields[key]?.[0]; return !control || control.disabled ? null : key === 'consent' ? control.checked ? 'on' : null : control.value; }
+    get(key) { const control = fields[key]?.[0]; return !control || control.disabled ? null : key === 'consent' ? control.checked ? 'on' : null : control.value; }
   }
   const calls = [];
   vm.runInNewContext(script, { document: { getElementById: key => ids.get(key) }, FormData, location: { protocol }, crypto: { randomUUID }, AbortController, setTimeout, clearTimeout, Error, TypeError, fetch: async (...args) => { calls.push(args); return send(...args); } });
-  const valid = () => { fields.name[0].value = ' Анна '; fields.phone[0].value = '+7 (999) 123-45-67'; fields.contact[0].value = '@syntolk_test'; fields.direction[1].checked = true; fields.consent[0].checked = true; };
+  const valid = () => { fields.name[0].value = ' Анна '; fields.phone[0].value = '+7 (999) 123-45-67'; fields.contact[0].value = '@syntolk_test'; fields.direction[0].value = 'CRM-интеграция и автоматизация'; fields.consent[0].checked = true; };
   return { form, fields, groups, submit, calls, valid, focused: () => focused, node: id => ids.get(id), send: () => form.fire('submit') };
 }
 
@@ -55,6 +55,22 @@ test('обязательный телефон проверяется отдел�
   app.fields.phone[0].value = '+44 20 7946 0958'; await app.groups.phone.fire('input');
   assert.equal(app.node('phone-error').hidden, true); assert.equal(app.fields.phone[0].attrs['aria-invalid'], undefined);
 });
+
+test('направление обязательно: пустой список получает фокус, выбор снимает ошибку и отправляется', async () => {
+  const select = html.match(/<select\b[^>]*id="partner-direction"[^>]*>([\s\S]*?)<\/select>/);
+  assert(select, 'The page must ship a native direction select');
+  assert.match(select[0], /\brequired\b/);
+  assert.equal([...select[1].matchAll(/<option value="[^"]+"/g)].length, 8);
+  const app = setup(); app.valid(); app.fields.direction[0].value = '';
+  await app.send();
+  assert.equal(app.calls.length, 0); assert.equal(app.focused(), app.fields.direction[0]);
+  assert.equal(app.fields.direction[0].attrs['aria-invalid'], 'true');
+  app.fields.direction[0].value = 'Автор или блогер'; await app.groups.direction.fire('change');
+  assert.equal(app.node('direction-error').hidden, true);
+  assert.equal(app.fields.direction[0].attrs['aria-invalid'], undefined);
+  await app.send();
+  assert.equal(JSON.parse(app.calls[0][1].body).direction, 'Автор или блогер');
+});
 test('отправляет телефон и выбранное направление, подтверждает сохранение и очищает форму', async () => {
   const app = setup(); app.valid(); await app.send();
   assert.equal(app.calls.length, 1);
@@ -62,7 +78,7 @@ test('отправляет телефон и выбранное направле
   assert.equal(url, '/api/partner-applications');
   assert.deepEqual(JSON.parse(request.body), { name: 'Анна', phone: '+79991234567', contact: '@syntolk_test', direction: 'CRM-интеграция и автоматизация', audience: '', consent: true, website: '' });
   assert.equal(app.node('form-status').className, 'form-status is-success');
-  assert.equal(app.fields.phone[0].value, ''); assert.equal(app.fields.direction[1].checked, false);
+  assert.equal(app.fields.phone[0].value, ''); assert.equal(app.fields.direction[0].value, '');
   assert.equal(app.submit.disabled, false); assert(app.form.children.every(control => !control.disabled));
   assert.equal(app.focused(), app.node('form-status'));
 });
