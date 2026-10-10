@@ -780,6 +780,218 @@
     @media(max-width:360px){.join .application{padding-inline:16px}.direction-option>span{font-size:12px;padding-inline:8px;gap:6px}.direction-option>span::before{width:14px;height:14px}}
     @media(forced-colors:active){.direction-option input:checked+span{outline:2px solid Highlight}.direction-option input:checked+span::before{background:Highlight}.join .field input:focus,.join .field textarea:focus{outline:2px solid Highlight}}
 </style>
+<style id="mobile-layout">
+    /* Compact layouts use separate photo and text rows, so copy cannot stretch a photo. */
+    @media(max-width:1000px){
+      html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:88px}
+      .container{width:calc(100% - 48px)}
+      .section{padding-block:64px}
+      .section-heading{margin-bottom:28px}
+      .header-inner{min-height:68px;gap:12px}
+      .menu-toggle{width:44px;height:44px}
+      .header-cta{min-height:44px}
+      .mobile-nav{inset:68px 0 0;padding:16px 24px calc(24px + env(safe-area-inset-bottom));overscroll-behavior:contain}
+      .mobile-nav a{padding-block:16px;font-size:19px}
+      .hero.hero-immersive.hero-partner-hero{padding:16px 16px 0}
+      .hero-partner-hero .hero-stage{min-height:0;border-radius:24px}
+      .hero-partner-hero .hero-content{width:calc(100% - 56px);padding-block:56px}
+      .hero-partner-hero h1{font-size:clamp(36px,5.8vw,56px)}
+      .hero-partner-hero .hero-offer{font-size:clamp(24px,3.3vw,30px)}
+      .hero-partner-hero .lead{font-size:16px;margin-top:20px}
+      .hero-partner-hero .hero-duration{font-size:14px;margin-top:12px}
+      .hero-partner-hero .hero-actions{margin-top:26px}
+      .community.community-first{padding-block:56px}
+      .community-first .community-header{margin-bottom:28px}
+      .community-first .community-header h2{font-size:clamp(32px,4.5vw,40px)}
+      .community-first .partner-support-grid,.audience-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;align-items:stretch}
+      .community-first .partner-support-grid .photo-story,
+      .community-first .partner-support-grid .photo-story:last-child,
+      .audience-grid .audience-card.photo-story,
+      .audience-grid .audience-card.photo-story:last-child{display:flex;flex-direction:column;align-items:stretch;grid-column:auto;min-width:0;min-height:0;padding:0;border-radius:18px;background:#101f32}
+      .community-first .partner-support-grid .photo-story::after,
+      .audience-grid .audience-card.photo-story::after{display:none}
+      .community-first .partner-support-grid .photo-story>img,
+      .audience-grid .audience-card.photo-story>img{position:static;inset:auto;z-index:auto;display:block;flex:none;width:100%;max-width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:center 35%;transform:none;margin:0}
+      .community-first .partner-support-grid .support-mentor>img{object-position:65% center}
+      .community-first .partner-support-grid .support-webinars>img{width:110%;max-width:none;aspect-ratio:1.65;object-position:right 25%;margin-left:-10%}
+      .community-first .partner-support-grid .story-copy,
+      .community-first .partner-support-grid .photo-story:last-child .story-copy,
+      .audience-grid .story-copy{flex:1;max-width:none;padding:20px}
+      .community-first .partner-support-grid .story-copy h3,
+      .audience-grid .story-copy h3{min-height:0;max-width:none;margin:0 0 10px;font-size:22px;line-height:1.25;letter-spacing:-.025em}
+      .community-first .partner-support-grid .story-copy p,
+      .audience-grid .story-copy p{max-width:none;font-size:15px;line-height:1.6}
+      .product{padding:0 0 64px}
+      .product .product-panel{padding:0;overflow:visible}
+      .product-panel h2{font-size:clamp(32px,4.5vw,40px)}
+      .product-panel .intro{font-size:16px;line-height:1.6;margin-top:16px}
+      .product-showcase.sd-showcase{width:100%;margin-top:24px}
+      .sd-app{border-radius:16px;min-width:0}
+      .sd-layout{grid-template-columns:1fr;height:auto}
+      .sd-sidebar{display:none}
+      .sd-main,.sd-panels{overflow:visible}
+      .sd-panel{height:auto;padding:24px;overflow:visible}
+      .sd-file-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-height:350px;overflow:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+      .sd-app .sd-search input,.sd-app .sd-category select{font-size:16px}
+      .sd-tabs button{min-height:44px;font-size:13px}
+      .sd-question,.sd-answer,.sd-source-text{font-size:14px}
+      .sd-answer-table{font-size:12px}
+      .sd-answer-table th{font-size:11px}
+      .sd-answer-table th:last-child,.sd-answer-table td:last-child{white-space:normal}
+      .global-strip{display:grid;grid-template-columns:28px minmax(0,1fr);align-items:start;gap:8px 14px;padding:20px;margin-top:20px}
+      .global-strip>.icon{width:26px;height:26px;margin-top:2px}
+      .global-strip>div{min-width:0}
+      .global-strip h3{font-size:18px;line-height:1.35}
+      .global-strip p{font-size:14px;line-height:1.55}
+      .global-strip .text-link{grid-column:2;margin:0;justify-self:start;white-space:normal}
+      .reward-section{padding-top:24px;padding-bottom:56px}
+      .reward-panel{grid-template-columns:minmax(0,1fr) minmax(300px,360px);gap:28px;min-height:0;padding:28px;border-radius:22px}
+      .reward-intro h2{font-size:clamp(30px,4vw,40px)}
+      .reward-intro>p{font-size:16px;line-height:1.6}
+      .calculator{width:100%;max-width:none;padding:20px}
+      .calc-field label,.calc-result>span{font-size:13px;line-height:1.45}
+      .calc-result output{font-size:40px;line-height:1.2}
+      .calc-total{font-size:12px}
+      .faq{padding-top:0;padding-bottom:56px}
+      .faq-layout{grid-template-columns:1fr;gap:24px}
+      .faq-intro h2{font-size:clamp(32px,4.5vw,40px)}
+      .faq-list summary{font-size:16px;padding-block:18px}
+      .faq-list details>p{font-size:15px;line-height:1.6;padding-right:24px}
+      .join.section{padding-block:56px}
+      .join .join-grid{gap:24px}
+      .join .join-copy h2{font-size:clamp(32px,4.5vw,40px)}
+      .join .application{padding:26px;max-width:760px;border-radius:20px}
+      .join .contact-fields{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+      .join .contact-fields .field:first-child{grid-column:1/-1}
+      .direction-options{grid-template-columns:repeat(4,minmax(0,1fr))}
+      .footer-inner{font-size:12px;gap:12px}
+      .footer-links{flex-wrap:wrap;gap:0 20px}
+      .footer-links a{display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
+    }
+    @media(max-width:760px){
+      .reward-panel{grid-template-columns:minmax(0,1fr);gap:24px;background-image:linear-gradient(180deg,rgba(3,15,35,.68),rgba(3,15,35,.52)),url('Syntolk-partners-assets/asset-c25fef1f08e6.webp');background-position:58% center}
+      .reward-intro{max-width:600px}
+      .reward-intro>p{max-width:580px}
+      .calculator{justify-self:stretch}
+      .sd-file-tools{grid-template-columns:minmax(0,1fr);gap:10px}
+      .sd-tabs{gap:4px;padding:10px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+      .sd-tabs button{gap:5px;padding:9px 5px;white-space:normal;font-size:12px;line-height:1.35}
+      .sd-answer-table th:last-child,.sd-answer-table td:last-child{white-space:nowrap}
+      .direction-options{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media(max-width:600px){
+      .container{width:calc(100% - 32px)}
+      .section,.community.community-first,.join.section{padding-block:48px}
+      h2,.community-first .community-header h2,.product-panel h2,.faq-intro h2,.join .join-copy h2{font-size:clamp(30px,8vw,36px);line-height:1.12;letter-spacing:-.04em}
+      .section-heading,.community-first .community-header{margin-bottom:24px}
+      .header-inner{min-height:64px;gap:8px}
+      .brand{font-size:21px;gap:6px}
+      .brand img{width:22px;height:24px}
+      .header-cta{font-size:12px;min-height:44px;padding:10px}
+      .menu-toggle{width:44px;height:44px}
+      .mobile-nav{top:64px;padding-inline:20px}
+      .hero.hero-immersive.hero-partner-hero{padding:10px 10px 0}
+      .hero-partner-hero .hero-stage{border-radius:20px}
+      .hero-partner-hero .hero-content{width:calc(100% - 36px);padding-block:40px}
+      .hero-partner-hero h1{font-size:clamp(32px,9vw,44px);line-height:1.08;margin-bottom:18px}
+      .hero-partner-hero .hero-offer{font-size:clamp(21px,5.8vw,26px);line-height:1.3}
+      .hero-partner-hero .lead{font-size:15px;line-height:1.6;margin-top:18px}
+      .hero-partner-hero .hero-duration{font-size:13px;line-height:1.55;margin-top:12px}
+      .hero-partner-hero .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;max-width:360px;width:100%;margin:24px auto 0}
+      .hero-partner-hero .hero-actions .btn{width:100%;min-height:50px;padding:13px 16px;font-size:15px}
+      .community-first .partner-support-grid,.audience-grid{grid-template-columns:minmax(0,1fr);gap:18px}
+      .community-first .partner-support-grid .story-copy,
+      .community-first .partner-support-grid .photo-story:last-child .story-copy,
+      .audience-grid .story-copy{padding:18px 20px 20px}
+      .community-first .partner-support-grid .story-copy h3,
+      .audience-grid .story-copy h3{font-size:22px;margin-bottom:8px}
+      .product{padding:0 0 48px}
+      .product-panel .intro{font-size:15px;margin-top:14px}
+      .product-showcase.sd-showcase{margin-top:22px}
+      .sd-topbar{min-height:60px;padding:12px;gap:8px}
+      .sd-brand{font-size:18px;gap:8px}
+      .sd-brand-sub{display:none}
+      .sd-brand img{width:22px;height:24px}
+      .sd-demo-link{font-size:11px;min-height:44px;padding:8px 10px;gap:5px}
+      .sd-tabs{padding:8px;gap:4px}
+      .sd-tabs .sd-icon{display:none}
+      .sd-panel{padding:20px 16px}
+      .sd-panel-heading h3{font-size:20px}
+      .sd-panel-heading p{font-size:13px;line-height:1.5}
+      .sd-file-tools{margin-top:16px}
+      .sd-file-grid{grid-template-columns:minmax(0,1fr);max-height:320px;gap:10px}
+      .sd-file-card{padding:12px 14px}
+      .sd-file-card h4{min-height:0;font-size:14px}
+      .sd-file-card p{margin-top:8px;font-size:12px}
+      .sd-file-top{margin-bottom:8px}
+      .sd-file-count{padding:13px 0 10px;font-size:12px}
+      .sd-ready{font-size:11px}
+      .sd-question{max-width:100%;padding:14px;font-size:14px}
+      .sd-scope{font-size:12px}
+      .sd-scope>span{font-size:11px;margin-left:0}
+      .sd-answer-table tr{gap:8px 12px}
+      .sd-answer-table td:nth-child(2){font-size:12px}
+      .sd-answer-table td:last-child{font-size:12px}
+      .sd-source-title h3{font-size:16px}
+      .sd-source-text{padding:18px 14px;margin-top:18px;font-size:14px;line-height:1.7}
+      .global-strip{grid-template-columns:minmax(0,1fr);gap:8px;padding:18px;border-radius:16px;margin-top:18px}
+      .global-strip>.icon{display:none}
+      .global-strip h3{font-size:18px;margin-bottom:6px}
+      .global-strip .text-link{grid-column:1;font-size:14px}
+      .reward-section{padding-top:24px;padding-bottom:48px}
+      .reward-panel{padding:24px 18px;gap:22px;border-radius:20px}
+      .reward-intro h2{font-size:clamp(28px,7.8vw,34px);line-height:1.12}
+      .reward-intro>p{font-size:15px;margin-top:14px}
+      .calculator{padding:18px 16px;border-radius:16px}
+      .calc-heading{margin-bottom:16px;gap:8px}
+      .calc-heading h3{font-size:20px;line-height:1.25}
+      .calc-field{margin-bottom:14px;gap:8px}
+      .calc-label-row{gap:12px;align-items:center}
+      .calc-field label{font-size:13px;line-height:1.45;max-width:none;min-width:0}
+      .client-count{width:68px}
+      .input-unit input{height:48px;font-size:16px}
+      .input-unit span{top:13px}
+      #client-range{height:36px;margin-top:0}
+      .range-labels{font-size:11px;margin-top:-8px}
+      .calc-result{padding-top:16px;margin-top:16px}
+      .calc-result>span{font-size:13px}
+      .calc-result output{font-size:clamp(34px,10vw,42px);margin-top:8px}
+      .calc-total{font-size:12px;line-height:1.5;margin-top:8px}
+      .faq{padding-top:0;padding-bottom:48px}
+      .faq-layout{gap:22px}
+      .faq-list summary{font-size:15px;gap:16px;padding-block:17px}
+      .faq-list details>p{font-size:14px;padding-right:16px}
+      .join .join-copy>p{font-size:15px;margin-top:12px}
+      .join .application{padding:22px 20px;border-radius:18px}
+      .application-body{gap:22px}
+      .join .contact-fields{grid-template-columns:1fr;gap:16px}
+      .direction-option>span{padding-inline:9px;gap:7px}
+      .join .field input,.join .field textarea{font-size:16px;min-height:50px}
+      .join .application .btn{min-height:52px;font-size:15px}
+      .site-footer{padding-block:20px}
+      .footer-inner{display:block;font-size:12px;line-height:1.6}
+      .footer-inner>span{display:block}
+      .footer-links{display:flex;gap:0 18px;margin-top:8px}
+    }
+    @media(max-width:360px){
+      .hero-partner-hero .hero-content{width:calc(100% - 32px);padding-block:34px}
+      .community-first .partner-support-grid .story-copy,
+      .community-first .partner-support-grid .photo-story:last-child .story-copy,
+      .audience-grid .story-copy{padding-inline:16px}
+      .community-first .partner-support-grid .story-copy h3,
+      .audience-grid .story-copy h3{font-size:21px}
+      .sd-panel{padding-inline:12px}
+      .sd-topbar{padding-inline:10px}
+      .sd-brand{font-size:17px;gap:6px}
+      .sd-demo-link{font-size:10px;padding-inline:8px}
+      .sd-tabs button{font-size:11px;padding-inline:3px}
+      .reward-panel{padding-inline:16px}
+      .calculator{padding-inline:14px}
+      .calc-heading h3{font-size:19px}
+      .join .application{padding-inline:16px}
+      .direction-option>span{padding-inline:7px;gap:5px}
+    }
+</style>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -827,7 +1039,7 @@
         <div class="partner-support-grid">
           <article class="photo-story support-mentor"><img src="Syntolk-partners-assets/asset-b2f710307910.webp" alt="" width="1200" height="682" loading="lazy"><div class="story-copy"><h3>Разбираем продукт с наставником</h3><p>Показываем, кому подходит Syntolk, какие задачи он решает и как объяснять его возможности вашей аудитории.</p></div></article>
           <article class="photo-story support-materials"><img src="Syntolk-partners-assets/asset-8470dcadbf9e.webp" alt="" width="1448" height="1086" loading="lazy"><div class="story-copy"><h3>Готовим к продвижению</h3><p>Даём тексты, презентации, изображения и другие материалы, которые можно использовать в работе.</p></div></article>
-          <article class="photo-story support-cases"><img src="Syntolk-partners-assets/asset-ecc4755ffe37.webp" alt="" width="512" height="479" loading="lazy"><div class="story-copy"><h3>Обсуждаем способы привлечения</h3><p>Разбираем разные каналы, удачные подходы и вопросы, которые возникают при общении с потенциальными клиентами.</p></div></article>
+          <article class="photo-story support-cases"><img src="Syntolk-partners-assets/asset-ecc4755ffe37.webp" alt="" width="1448" height="1086" loading="lazy"><div class="story-copy"><h3>Обсуждаем способы привлечения</h3><p>Разбираем разные каналы, удачные подходы и вопросы, которые возникают при общении с потенциальными клиентами.</p></div></article>
           <article class="photo-story support-webinars"><img src="Syntolk-partners-assets/asset-411685dc6ee1.webp" alt="" width="513" height="479" loading="lazy"><div class="story-copy"><h3>Поддерживаем партнёров</h3><p>Проводим встречи и разборы, делимся обновлениями продукта и новыми материалами.</p></div></article>
         </div>
       </div>
@@ -860,9 +1072,9 @@
       <div class="container">
         <div class="section-heading"><h2 id="audience-title">Кому подойдёт партнёрство</h2></div>
         <div class="audience-grid">
-          <article class="audience-card photo-story audience-authors"><img src="Syntolk-partners-assets/asset-7e52f0d0b5e1.webp" alt="" width="1100" height="619" loading="lazy"><div class="story-copy"><h3>Авторы и блогеры</h3><p>Ваши читатели и подписчики могут использовать Syntolk для учёбы, подготовки материалов и работы с документами.</p></div></article>
-          <article class="audience-card photo-story audience-study"><img src="Syntolk-partners-assets/asset-6a47f206ef5b.webp" alt="" width="1100" height="619" loading="lazy"><div class="story-copy"><h3>Преподаватели и образовательные сообщества</h3><p>Помогайте ученикам и студентам разбирать лекции, учебники и материалы ваших курсов, готовиться к занятиям и экзаменам.</p></div></article>
-          <article class="audience-card photo-story audience-experts"><img src="Syntolk-partners-assets/asset-3ed4082f1b56.webp" alt="" width="1121" height="1403" loading="lazy"><div class="story-copy"><h3>Консультанты и агентства</h3><p>Предлагайте Syntolk клиентам, которым нужно разбираться в договорах, отчётах и проектной документации.</p></div></article>
+          <article class="audience-card photo-story audience-authors"><img src="Syntolk-partners-assets/asset-7e52f0d0b5e1.webp" alt="" width="1448" height="1086" loading="lazy"><div class="story-copy"><h3>Авторы и блогеры</h3><p>Ваши читатели и подписчики могут использовать Syntolk для учёбы, подготовки материалов и работы с документами.</p></div></article>
+          <article class="audience-card photo-story audience-study"><img src="Syntolk-partners-assets/asset-6a47f206ef5b.webp" alt="" width="1448" height="1086" loading="lazy"><div class="story-copy"><h3>Преподаватели и образовательные сообщества</h3><p>Помогайте ученикам и студентам разбирать лекции, учебники и материалы ваших курсов, готовиться к занятиям и экзаменам.</p></div></article>
+          <article class="audience-card photo-story audience-experts"><img src="Syntolk-partners-assets/asset-3ed4082f1b56.webp" alt="" width="1448" height="1086" loading="lazy"><div class="story-copy"><h3>Консультанты и агентства</h3><p>Предлагайте Syntolk клиентам, которым нужно разбираться в договорах, отчётах и проектной документации.</p></div></article>
           <article class="audience-card photo-story audience-business"><img src="Syntolk-partners-assets/crm-integrators-v2.webp" alt="" width="1448" height="1086" loading="lazy"><div class="story-copy"><h3>CRM-интеграторы</h3><p>Помогайте компаниям связать Syntolk с CRM и внутренними системами. Для интеграций предоставим API.</p></div></article>
         </div>
         <div class="global-strip"><svg class="icon" aria-hidden="true"><use href="#globe"/></svg><div><h3>Работаете с иностранной аудиторией?</h3><p>Укажите страну и язык в заявке. Обсудим возможности продукта для этого рынка.</p></div><a class="text-link" href="#join">Обсудить направление<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a></div>
