@@ -586,13 +586,14 @@
     .audience-grid .story-copy{padding:28px}
     .audience-grid .story-copy h3{font-size:25px;line-height:1.25}
     .audience-grid .story-copy p{font-size:15px;line-height:1.65}
-    .reward-section{padding-top:12px;padding-bottom:56px}
-    .reward-panel{max-width:1160px;gap:44px;padding:34px 40px}
-    .reward-intro>p{margin-top:16px;font-size:16px;line-height:1.6}
-    .calculator{padding:24px 26px}
-    .calc-heading{margin-bottom:17px}
-    .calc-field{margin-bottom:14px}
-    .calc-result{margin-top:17px;padding-top:17px}
+    .reward-section{padding-top:12px;padding-bottom:40px}
+    .reward-panel{max-width:980px;grid-template-columns:minmax(0,1fr) minmax(320px,.82fr);gap:28px;padding:22px 26px}
+    .reward-intro>p{margin-top:14px;font-size:15px;line-height:1.55}
+    .calculator{max-width:440px;justify-self:end;padding:16px 18px;border-radius:16px}
+    .calc-heading{margin-bottom:11px}
+    .calc-field{margin-bottom:11px}
+    .calc-result{margin-top:13px;padding-top:13px}
+    .calc-result output{font-size:42px}
     .calc-note{display:none}
     .promotion-panel.photo-story{min-height:380px;border-radius:24px}
     .promotion-panel.photo-story::after{background:linear-gradient(180deg,#07142670,#071426d9)}
@@ -631,6 +632,7 @@
       .promotion-list p{font-size:15px;line-height:1.65}
       .promotion-note{font-size:13px;text-align:left;margin-top:16px}
     }
+    @media(max-width:760px){.reward-panel{max-width:none;width:100%;grid-template-columns:1fr;gap:24px;padding:22px}.calculator{max-width:none;width:100%;justify-self:stretch;padding:20px}}
     @media(max-width:390px){.product-panel{padding:25px 16px}.product-screen-tabs button{font-size:12px}.audience-grid .story-copy{padding:23px}.promotion-list{padding:25px}}
   </style>
 <style id="syntolk-html-demo">
@@ -830,9 +832,9 @@
     </section>
     <section class="section reward-section" id="rewards" aria-labelledby="reward-title">
       <div class="container reward-panel">
-        <div class="reward-intro"><h2 id="reward-title">Вознаграждение<br>за все оплаты клиента</h2><p>Вы получаете 20% со всех платежей привлечённого клиента, включая продления и дополнительные оплаты, всё время, пока он платит за Syntolk.</p></div>
+        <div class="reward-intro"><h2 id="reward-title">Вознаграждение<br>за оплаты клиентов</h2><p>Вы получаете 20% с каждой оплаты привлечённых вами клиентов. В начисления входят продления и дополнительные платежи — всё время, пока клиенты пользуются Syntolk.</p></div>
         <div class="calculator" aria-labelledby="calc-title">
-          <div class="calc-heading"><h3 id="calc-title">Рассчитайте свою долю</h3></div>
+          <div class="calc-heading"><h3 id="calc-title">Рассчитайте свой процент</h3></div>
           <div class="calc-field"><div class="calc-label-row"><label for="client-count">Оплачивающие клиенты за месяц</label><div class="input-unit client-count"><input id="client-count" type="number" min="0" max="100" step="1" value="50" inputmode="numeric"></div></div><label class="sr-only" for="client-range">Количество оплачивающих клиентов</label><input id="client-range" type="range" min="0" max="100" step="1" value="50"><div class="range-labels" aria-hidden="true"><span>0</span><span>100 клиентов</span></div></div>
           <div class="calc-field"><label for="average-payment">Средняя оплата одного клиента за месяц</label><div class="input-unit"><input id="average-payment" type="number" min="0" max="1000000" step="1" value="20000" inputmode="numeric"><span aria-hidden="true">₽</span></div></div>
           <div class="calc-result" aria-live="polite" aria-atomic="true"><span>Ваше вознаграждение за этот месяц</span><output id="commission-output" for="client-count average-payment">200 000 ₽</output><p class="calc-total">При общих оплатах <span id="total-output">1 000 000 ₽</span></p></div>
