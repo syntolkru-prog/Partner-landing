@@ -1092,6 +1092,55 @@
       .product .sd-file-tools{grid-template-columns:minmax(0,1fr) minmax(150px,.65fr);margin-top:12px}
     }
 </style>
+<style id="partner-hero-style">
+/* Updated hero only; the rest of the landing keeps its original styles. */
+.partner-hero{position:relative;padding:0 0 28px;background:#fff;isolation:isolate}
+.partner-hero .ph-stage{position:relative;display:grid;place-items:center;min-height:600px;overflow:hidden;background:#062a43;color:#fff}
+.partner-hero .ph-photo{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center}
+.partner-hero .ph-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,25,42,.44),rgba(3,25,42,.25) 50%,rgba(3,25,42,.38));pointer-events:none}
+.partner-hero .ph-content{position:relative;z-index:1;width:min(960px,calc(100% - 48px));padding:76px 0 154px;text-align:center}
+.partner-hero .ph-title{max-width:none;margin:0 0 20px;color:#fff;font-size:clamp(44px,5.3vw,76px);font-weight:750;line-height:1.02;letter-spacing:-.05em;text-shadow:0 4px 22px rgba(0,0,0,.26)}
+.partner-hero .ph-offer{max-width:940px;margin:0 auto 20px;color:#fff;font-size:clamp(23px,2.4vw,34px);font-weight:700;line-height:1.35;text-wrap:balance}
+.partner-hero .ph-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.partner-hero .ph-actions .ph-button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:54px;padding:13px 26px;border:1px solid transparent;border-radius:10px;font-size:16px;font-weight:700;line-height:1.4;transition:background .2s,border-color .2s,box-shadow .2s}
+.partner-hero .ph-actions .ph-primary{background:linear-gradient(135deg,#ff4b50,#ff6268);color:#fff;box-shadow:0 10px 28px rgba(255,75,80,.26)}
+.partner-hero .ph-actions .ph-primary:hover{background:linear-gradient(135deg,#ee3f46,#ff5660);box-shadow:0 12px 30px rgba(255,75,80,.35)}
+.partner-hero .ph-actions .ph-secondary{color:#fff;border-color:rgba(255,255,255,.5);background:rgba(3,25,43,.3);backdrop-filter:blur(7px)}
+.partner-hero .ph-actions .ph-secondary:hover{background:rgba(3,25,43,.55);border-color:#fff}
+.partner-hero .ph-reward{position:relative;z-index:2;display:grid;grid-template-columns:minmax(220px,.9fr) minmax(0,1.4fr) minmax(260px,1fr);align-items:center;gap:32px;width:min(1260px,calc(100% - 48px));min-height:224px;margin:-100px auto 0;padding:30px 36px;border:1px solid rgba(255,255,255,.55);border-radius:20px;box-shadow:0 22px 54px rgba(5,35,56,.18);color:#fff;background:radial-gradient(circle at 78% 28%,rgba(51,147,224,.22),transparent 30%),linear-gradient(96deg,#07314b 0%,#05253a 58%,#031a2b 100%)}
+.partner-hero .ph-percent{font-size:clamp(100px,9vw,140px);font-weight:800;line-height:.9;letter-spacing:-.065em;white-space:nowrap;background:linear-gradient(128deg,#ff4c52 7%,#f27296 43%,#6d9de0 68%,#18a9f4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.partner-hero .ph-reward-copy{min-width:0}
+.partner-hero .ph-reward-copy h2{max-width:none;margin:0 0 12px;font-size:30px;font-weight:700;line-height:1.08;letter-spacing:-.025em;color:#fff}
+.partner-hero .ph-reward-copy p{margin:0;font-size:16px;line-height:1.55;color:rgba(255,255,255,.88)}
+.partner-hero .ph-art{position:relative;min-width:0;height:150px}
+.partner-hero .ph-chart{position:absolute;left:0;bottom:0;width:190px;height:150px}
+.partner-hero .ph-mini{position:absolute;right:0;bottom:0;width:112px;padding:16px 10px;border-radius:12px;text-align:center;font-size:12px;line-height:1.35;font-weight:700;background:linear-gradient(145deg,#355d8d,#173b60);box-shadow:0 11px 25px rgba(0,0,0,.2)}
+@media(max-width:1100px){
+.partner-hero .ph-reward{grid-template-columns:minmax(200px,.8fr) minmax(0,1.4fr);gap:28px}
+.partner-hero .ph-art{display:none}
+}
+@media(max-width:720px){
+.partner-hero{padding-bottom:24px}
+.partner-hero .ph-stage{min-height:540px}
+.partner-hero .ph-photo{object-position:42% center}
+.partner-hero .ph-stage::after{background:linear-gradient(180deg,rgba(3,25,42,.42),rgba(3,25,42,.64))}
+.partner-hero .ph-content{width:calc(100% - 32px);padding:60px 0 132px}
+.partner-hero .ph-title{font-size:clamp(30px,8.2vw,48px);line-height:1.06;margin-bottom:20px}
+.partner-hero .ph-offer{font-size:clamp(20px,4.8vw,25px);line-height:1.35;margin-bottom:24px}
+.partner-hero .ph-actions{gap:10px}
+.partner-hero .ph-actions .ph-button{min-height:50px;padding:12px 18px;font-size:14px}
+.partner-hero .ph-reward{width:calc(100% - 32px);grid-template-columns:minmax(0,1fr);gap:20px;margin-top:-92px;padding:26px 24px;border-radius:18px}
+.partner-hero .ph-percent{font-size:108px}
+.partner-hero .ph-reward-copy h2{font-size:26px}
+.partner-hero .ph-reward-copy p{font-size:15px}
+}
+@media(max-width:360px){
+.partner-hero .ph-actions{flex-direction:column;align-items:stretch}
+.partner-hero .ph-content{padding-top:48px}
+.partner-hero .ph-reward{padding:24px 20px}
+}
+@media(prefers-reduced-motion:reduce){.partner-hero .ph-button{transition:none}}
+</style>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -1121,15 +1170,38 @@
   </header>
   <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" inert><a href="#community">Программа</a><a href="#audiences">Для кого</a><a href="#rewards">Вознаграждение</a><a href="#faq">Вопросы и ответы</a></nav>
   <main id="main">
-    <section class="hero hero-immersive hero-partner-hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-stage">
-        <picture class="hero-background"><source media="(max-width:760px)" srcset="Syntolk-partners-assets/asset-a43f9eb025c8.webp"><img src="Syntolk-partners-assets/asset-c9d5b8c88a5e.webp" alt="" width="2169" height="725" fetchpriority="high"></picture>
-        <div class="container hero-content">
-          <h1 id="hero-title">Зарабатывайте с Syntolk</h1>
-          <p class="hero-offer">Рекомендуйте продукт — получайте 20% с каждой оплаты привлечённых клиентов</p>
-          <p class="lead">Мы помогаем разобраться в Syntolk, даём готовые материалы для продвижения и поддерживаем партнёров на старте и в процессе работы.</p>
-          <p class="hero-duration">Вознаграждение начисляется всё время, пока привлечённый клиент оплачивает сервис.</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#join">Стать партнёром →</a><a class="btn btn-secondary" href="#community">Как устроена программа</a></div>
+    <section class="partner-hero" id="top" aria-labelledby="hero-title">
+      <div class="ph-stage">
+        <img class="ph-photo" src="Syntolk-partners-assets/partner-hero-office.webp" alt="" fetchpriority="high" decoding="async">
+        <div class="ph-content">
+          <h1 class="ph-title" id="hero-title">Партнёрская<br>программа Syntolk</h1>
+          <p class="ph-offer">Получайте 20% с каждой оплаты привлечённых вами клиентов</p>
+          <div class="ph-actions">
+            <a class="ph-button ph-primary" href="#join">Стать партнёром <span aria-hidden="true">→</span></a>
+            <a class="ph-button ph-secondary" href="#rewards">Узнать условия</a>
+          </div>
+        </div>
+      </div>
+      <div class="ph-reward">
+        <div class="ph-percent">20%</div>
+        <div class="ph-reward-copy">
+          <h2>Начисления<br>продолжаются</h2>
+          <p>Вознаграждение распространяется на первую оплату, продления и дополнительные платежи — на протяжении всего времени, пока привлечённые вами клиенты оплачивают Syntolk.</p>
+        </div>
+        <div class="ph-art" aria-hidden="true">
+          <svg class="ph-chart" viewBox="0 0 190 150" focusable="false" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="ph-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3c84bd"/><stop offset="1" stop-color="#174b76"/></linearGradient>
+              <linearGradient id="ph-pink" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ef7e9e"/><stop offset=".64" stop-color="#536fa5"/><stop offset="1" stop-color="#17446e"/></linearGradient>
+            </defs>
+            <rect x="0" y="122" width="30" height="28" rx="5" fill="url(#ph-blue)"/>
+            <rect x="42" y="102" width="30" height="48" rx="5" fill="url(#ph-blue)"/>
+            <rect x="84" y="80" width="30" height="70" rx="5" fill="url(#ph-blue)"/>
+            <rect x="126" y="54" width="30" height="96" rx="5" fill="url(#ph-pink)"/>
+            <path d="M55 83 C63 35 146 11 172 31" fill="none" stroke="#ff82a0" stroke-width="6" stroke-linecap="round"/>
+            <path d="M175 4 L169 29 L153 19 Z" fill="#ffadb9"/>
+          </svg>
+          <div class="ph-mini">Партнёры<br>зарабатывают<br>больше<br>вместе с Syntolk</div>
         </div>
       </div>
     </section>
