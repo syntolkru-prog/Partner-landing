@@ -21,9 +21,10 @@ function validate(body) {
     if (typeof body[key] !== 'string' || body[key].trim().length > max || /[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(body[key])) throw fail(400, 'Проверьте поля заявки.');
     return body[key].trim();
   };
-  const name = text('name', 100), contact = text('contact', 160), direction = text('direction', 100), audience = text('audience', 2000);
-  if (!name || /[\r\n]/.test(name) || !(EMAIL.test(contact) || TELEGRAM.test(contact)) || !DIRECTIONS.has(direction) || body.consent !== true || body.website !== '') throw fail(400, 'Укажите имя, email или Telegram, направление и согласие на обработку данных.');
-  return { name, contact, direction, audience, consent: true };
+  const name = text('name', 100), phone = text('phone', 32), contact = text('contact', 160), direction = text('direction', 100), audience = text('audience', 2000);
+  const validPhone = /^\+?[\d ()-]+$/.test(phone) && /^\d{10,15}$/.test(phone.replace(/\D/g, ''));
+  if (!name || /[\r\n]/.test(name) || !validPhone || !(EMAIL.test(contact) || TELEGRAM.test(contact)) || !DIRECTIONS.has(direction) || body.consent !== true || body.website !== '') throw fail(400, 'Проверьте имя, телефон, email или Telegram, направление и согласие на обработку данных.');
+  return { name, phone: phone.replace(/[ ()-]/g, ''), contact, direction, audience, consent: true };
 }
 
 async function jsonBody(req) {
@@ -140,7 +141,7 @@ async function main() {
   const transport = nodemailer.createTransport({ host: process.env.SMTP_HOST, port: Number(process.env.SMTP_PORT || 465), secure: process.env.SMTP_SECURE !== 'false', requireTLS: true, auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }, connectionTimeout: 10_000, greetingTimeout: 10_000, socketTimeout: 20_000 });
   await transport.verify();
   const { server, flush } = await createApplicationServer({ publicOrigin: origin.origin, dataDir: path.resolve(process.env.DATA_DIR || path.join(here, 'data')), trustProxy: process.env.TRUST_PROXY === 'true', sendMail: async ({ id, createdAt, application: a }) => {
-    const result = await transport.sendMail({ from: process.env.SMTP_FROM, to, replyTo: EMAIL.test(a.contact) ? a.contact : undefined, messageId: `<partner-${id}@${origin.hostname}>`, subject: 'Новая заявка партнёра Syntolk', text: [`Заявка: ${id}`, `Дата: ${createdAt}`, `Имя: ${a.name}`, `Связь: ${a.contact}`, `Направление: ${a.direction}`, `Аудитория или проект: ${a.audience || 'Не указано'}`, 'Согласие на обработку данных: получено'].join('\n') });
+    const result = await transport.sendMail({ from: process.env.SMTP_FROM, to, replyTo: EMAIL.test(a.contact) ? a.contact : undefined, messageId: `<partner-${id}@${origin.hostname}>`, subject: 'Новая заявка партнёра Syntolk', text: [`Заявка: ${id}`, `Дата: ${createdAt}`, `Имя: ${a.name}`, `Телефон: ${a.phone || 'Не указан в прежней версии формы'}`, `Email или Telegram: ${a.contact}`, `Направление: ${a.direction}`, `Аудитория или проект: ${a.audience || 'Не указано'}`, 'Согласие на обработку данных: получено'].join('\n') });
     if (!result.accepted?.length) throw new Error('SMTP did not accept the notification.');
   } });
   server.listen(Number(process.env.PORT || 3000), process.env.HOST || '127.0.0.1', () => console.log('Syntolk partner server is ready.'));

@@ -7,7 +7,7 @@ import { createApplicationServer } from './server.mjs';
 
 const origin = 'https://partners.syntolk.ru';
 const testRoot = path.resolve('.test-temp');
-const valid = () => ({ name: 'Проверка <b>имени</b>', contact: 'test@example.com', direction: 'Автор или блогер', audience: 'Тестовая заявка без отправки письма.', consent: true, website: '' });
+const valid = () => ({ name: 'Проверка <b>имени</b>', phone: '+79991234567', contact: 'test@example.com', direction: 'Автор или блогер', audience: 'Тестовая заявка без отправки письма.', consent: true, website: '' });
 async function fixture(t, options = {}) {
   await mkdir(testRoot, { recursive: true });
   const root = await mkdtemp(path.join(testRoot, 'syntolk-partner-test-'));
@@ -28,9 +28,25 @@ test('сохраняет заявку и повтор с тем же ключо�
   assert.equal((await app.post(body, id)).status, 201); assert.equal((await readdir(app.dataDir)).length, 1);
   assert.equal((await app.post({ ...body, name: 'Другое имя' }, id)).status, 409);
 });
-test('принимает Telegram как самостоятельный контакт', async t => {
+test('принимает Telegram вместе с обязательным телефоном', async t => {
   const app = await fixture(t);
   assert.equal((await app.post({ ...valid(), contact: '@partner_test' })).status, 201);
+});
+test('телефон обязателен; сохраняет международные номера без разделителей и передаёт в уведомление', async t => {
+  const notifications = [];
+  const app = await fixture(t, { sendMail: async record => { notifications.push(record); }, rateMax: 20 });
+  for (const phone of ['', '12345', '+7 999 call me', '1234567890123456', '+7\n9991234567']) assert.equal((await app.post({ ...valid(), phone })).status, 400);
+  const { phone, ...withoutPhone } = valid();
+  assert.equal((await app.post(withoutPhone)).status, 400);
+  for (const number of ['+7 (999) 123-45-67', '+44 20 7946 0958', '8 999 123 45 67']) {
+    const id = randomUUID();
+    assert.equal((await app.post({ ...valid(), phone: number }, id)).status, 201);
+    const record = JSON.parse(await readFile(path.join(app.dataDir, id + '.json'), 'utf8'));
+    assert.equal(record.application.phone, number.replace(/[ ()-]/g, ''));
+  }
+  for (let i = 0; i < 20 && notifications.length < 3; i++) { await app.flush(); await new Promise(resolve => setTimeout(resolve, 5)); }
+  assert.equal(notifications.length, 3);
+  assert.equal(notifications[0].application.phone, '+79991234567');
 });
 test('отклоняет неверные поля, инъекцию заголовков, отсутствие согласия и ловушку', async t => {
   const app = await fixture(t, { rateMax: 20 });

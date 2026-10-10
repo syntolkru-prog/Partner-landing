@@ -732,6 +732,54 @@
 }
 @media(forced-colors:active){.sd-search:focus-within{outline:2px solid Highlight;outline-offset:2px}}
 </style>
+<style id="partner-application-styles">
+    .join.section{padding-block:72px;background:#245cec}
+    .join .join-grid{max-width:960px;grid-template-columns:1fr;gap:30px;text-align:center}
+    .join .join-copy h2{max-width:900px;font-size:clamp(34px,3.6vw,48px);margin-inline:auto}
+    .join .join-copy>p{max-width:650px;margin:16px auto 0;font-size:16px;line-height:1.6;color:#edf2ff}
+    .join .application{width:100%;max-width:900px;padding:32px;border:1px solid #ffffffc2;border-radius:24px;box-shadow:0 20px 64px #0b2c8226;text-align:left;animation:none;transform:none}
+    .application-body{display:grid;gap:24px}
+    .application-group{min-width:0;border:0;margin:0;padding:0}
+    .application-group>legend{padding:0;margin:0 0 12px;font-size:15px;line-height:1.4;font-weight:600;color:var(--ink)}
+    .join .contact-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+    .join .field{display:flex;flex-direction:column;gap:8px;min-width:0}
+    .join .field>label{font-size:13px;font-weight:500;line-height:1.4;color:#35445c}
+    .join .field>label .optional-label{font-size:12px;font-weight:400;color:#718097}
+    .join .required-mark{color:var(--blue);font-size:inherit;font-weight:500}
+    .join .field input,.join .field textarea{width:100%;min-width:0;min-height:52px;padding:13px 14px;border:1px solid #d4ddea;border-radius:10px;background:#fbfcfe;font-size:16px;line-height:1.5;color:var(--ink);transition:border-color .12s,box-shadow .12s;background-clip:padding-box}
+    .join .field textarea{height:78px;min-height:78px;padding-block:11px;resize:vertical}
+    .join .field input::placeholder,.join .field textarea::placeholder{color:#7c899c;opacity:1}
+    .join .field input:focus,.join .field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px #245cec16;background:#fff}
+    .direction-options{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+    .direction-option{position:relative;display:block;min-width:0;cursor:pointer}
+    .direction-option input{position:absolute;width:1px;height:1px;opacity:0;margin:0}
+    .direction-option>span{display:flex;align-items:center;gap:9px;min-height:50px;height:100%;padding:11px 12px;border:1px solid #d4ddea;border-radius:10px;background:#fff;color:#47576e;font-size:13px;line-height:1.4;transition:border-color .12s,background-color .12s}
+    .direction-option>span::before{content:"";box-sizing:border-box;width:16px;height:16px;flex:none;border:1.5px solid #aab7ca;border-radius:50%;background:#fff}
+    .direction-option input:checked+span{border-color:var(--blue);background:#edf3ff;color:#1948c5}
+    .direction-option input:checked+span::before{border:5px solid var(--blue)}
+    .direction-option input:focus-visible+span{outline:3px solid #88a8ff;outline-offset:2px}
+    .direction-option input:disabled+span{cursor:wait;opacity:.75}
+    .join .field-error{margin:0;font-size:12px;line-height:1.5;color:#b4233d;overflow-wrap:anywhere}
+    .join .application-group>.field-error{margin-top:8px}
+    .join .field-error[hidden]{display:none}
+    .join .has-error input:not([type=radio]):not([type=checkbox]),.join .has-error textarea{border-color:#bd3a50}
+    .join .has-error .direction-option>span{border-color:#bd3a50}
+    .join .consent{margin-top:22px;gap:10px;font-size:12px;line-height:1.6;color:#64738a;cursor:pointer}
+    .join .consent input{width:19px;height:19px;margin:1px 0 0;accent-color:var(--blue)}
+    .join .consent-field>.field-error{margin-top:6px}
+    .join .application .btn{min-height:54px;margin-top:18px;border-radius:10px;font-size:16px;gap:12px}
+    .join .application button[disabled]{cursor:wait;opacity:.75}
+    .join .application .form-status{margin:16px 0 0;font-size:14px;line-height:1.6}
+    .join .form-status.is-success{padding:14px 16px;border:1px solid #bde1cf;border-radius:10px;background:#f0faf5;color:#176544}
+    .join .form-status.is-error{color:#b4233d}
+    .join .application .form-fallback{margin:8px 0 0;font-size:13px;line-height:1.6}
+    .join .application .send-note{margin:12px 0 0;font-size:12px;line-height:1.6}
+    @media(hover:hover){.direction-option:hover>span{border-color:#8ca8dd;background:#f8faff}}
+    @media(max-width:900px){.direction-options{grid-template-columns:repeat(2,minmax(0,1fr))}.join .contact-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.join .contact-fields .field:first-child{grid-column:1/-1}}
+    @media(max-width:600px){.join.section{padding-block:48px}.join .join-grid{gap:24px}.join .join-copy h2{font-size:34px}.join .join-copy>p{font-size:15px;margin-top:12px}.join .application{padding:24px 20px;border-radius:20px}.join .contact-fields{grid-template-columns:1fr;gap:18px}.application-body{gap:22px}.direction-option>span{font-size:13px;padding:11px 10px;gap:8px}.join .consent{font-size:12px}.join .application .btn{font-size:15px}}
+    @media(max-width:360px){.join .application{padding-inline:16px}.direction-option>span{font-size:12px;padding-inline:8px;gap:6px}.direction-option>span::before{width:14px;height:14px}}
+    @media(forced-colors:active){.direction-option input:checked+span{outline:2px solid Highlight}.direction-option input:checked+span::before{background:Highlight}.join .field input:focus,.join .field textarea:focus{outline:2px solid Highlight}}
+</style>
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
@@ -841,13 +889,37 @@
     </section>
     <section class="section join" id="join" aria-labelledby="join-title">
       <div class="container join-grid">
-        <div class="join-copy"><h2 id="join-title">Стать партнёром Syntolk</h2><p>Расскажите о своей аудитории, клиентской базе или проекте внедрения.</p></div>
+        <div class="join-copy"><h2 id="join-title">Стать партнёром Syntolk</h2><p>Оставьте заявку — свяжемся с вами и обсудим сотрудничество.</p></div>
         <form class="application" id="partner-form" aria-labelledby="join-title" data-endpoint="/api/partner-applications" method="post" action="/api/partner-applications">
-          <div class="fields"><div class="field"><label for="partner-name">Ваше имя</label><input id="partner-name" name="name" autocomplete="name" required maxlength="100" placeholder="Как к вам обращаться"></div><div class="field"><label for="partner-contact">Email или Telegram</label><input id="partner-contact" name="contact" type="text" autocomplete="off" maxlength="160" placeholder="name@example.com или @username" required aria-describedby="contact-help"><span class="field-help" id="contact-help">Укажите удобный способ связи.</span></div><div class="field full"><label for="partner-direction">Ваше направление</label><select id="partner-direction" name="direction" required><option value="" selected disabled>Выберите близкий вам вариант</option><option>Автор или блогер</option><option>Образование и преподавание</option><option>Эксперт или консультант</option><option>Агентство или работа с бизнесом</option><option>CRM-интеграция и автоматизация</option><option>Профессиональное сообщество</option><option>Пока выбираю направление</option><option>Другое направление</option></select></div><div class="field full"><label for="partner-audience">Аудитория или проект <span>необязательно</span></label><textarea id="partner-audience" name="audience" rows="3" maxlength="2000" placeholder="Тематика, ссылка на площадку или задача интеграции."></textarea></div></div>
+          <div class="application-body">
+            <fieldset class="application-group">
+              <legend class="sr-only">Контактные данные</legend>
+              <div class="contact-fields">
+                <div class="field" data-field="name"><label for="partner-name">Ваше имя <span class="required-mark" aria-hidden="true">*</span></label><input id="partner-name" name="name" type="text" autocomplete="name" required maxlength="100" placeholder="Как к вам обращаться" aria-describedby="name-error"><p class="field-error" id="name-error" hidden></p></div>
+                <div class="field" data-field="phone"><label for="partner-phone">Номер телефона <span class="required-mark" aria-hidden="true">*</span></label><input id="partner-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="32" placeholder="+7 999 123-45-67" aria-describedby="phone-error"><p class="field-error" id="phone-error" hidden></p></div>
+                <div class="field" data-field="contact"><label for="partner-contact">Email или Telegram <span class="required-mark" aria-hidden="true">*</span></label><input id="partner-contact" name="contact" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="160" placeholder="Email или @username" required aria-describedby="contact-error"><p class="field-error" id="contact-error" hidden></p></div>
+              </div>
+            </fieldset>
+            <fieldset class="application-group" data-field="direction" aria-describedby="direction-error">
+              <legend>Ваше направление <span class="required-mark" aria-hidden="true">*</span></legend>
+              <div class="direction-options">
+                <label class="direction-option"><input type="radio" name="direction" value="Автор или блогер" required><span>Автор / блогер</span></label>
+                <label class="direction-option"><input type="radio" name="direction" value="Образование и преподавание" required><span>Образование</span></label>
+                <label class="direction-option"><input type="radio" name="direction" value="Эксперт или консультант" required><span>Консультант</span></label>
+                <label class="direction-option"><input type="radio" name="direction" value="Агентство или работа с бизнесом" required><span>Агентство</span></label>
+                <label class="direction-option"><input type="radio" name="direction" value="CRM-интеграция и автоматизация" required><span>CRM / API</span></label>
+                <label class="direction-option"><input type="radio" name="direction" value="Профессиональное сообщество" required><span>Сообщество</span></label>
+                <label class="direction-option"><input type="radio" name="direction" value="Пока выбираю направление" required><span>Пока выбираю</span></label>
+                <label class="direction-option"><input type="radio" name="direction" value="Другое направление" required><span>Другое</span></label>
+              </div>
+              <p class="field-error" id="direction-error" hidden></p>
+            </fieldset>
+            <div class="field" data-field="audience"><label for="partner-audience">Аудитория или проект <span class="optional-label">· необязательно</span></label><textarea id="partner-audience" name="audience" rows="2" maxlength="2000" placeholder="Ссылка на площадку, ваша тематика или задача внедрения." aria-describedby="audience-error"></textarea><p class="field-error" id="audience-error" hidden></p></div>
+          </div>
           <div class="form-trap" aria-hidden="true"><label>Ваш сайт<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-          <label class="consent"><input type="checkbox" name="consent" required><span>Я согласен с обработкой персональных данных в соответствии с <a href="https://syntolk.ru/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>
-          <button class="btn btn-primary" type="submit" disabled>Отправить заявку<svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
-          <p class="send-note">После заявки свяжемся с вами, обсудим направление и условия участия.</p><p class="form-status" id="form-status" role="status" aria-live="polite"></p><p class="form-fallback" id="form-fallback" hidden>Можно также <a href="mailto:support@syntolk.ru" id="application-email">написать на support@syntolk.ru</a>.</p><noscript><p class="send-note">Для отправки формы включите JavaScript или напишите на <a href="mailto:support@syntolk.ru">support@syntolk.ru</a>.</p></noscript>
+          <div class="consent-field" data-field="consent"><label class="consent"><input type="checkbox" id="partner-consent" name="consent" required aria-describedby="consent-error"><span>Соглашаюсь на обработку персональных данных в соответствии с <a href="https://syntolk.ru/privacy" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label><p class="field-error" id="consent-error" hidden></p></div>
+          <button class="btn btn-primary" type="submit" disabled><span id="application-submit-label">Отправить заявку</span><svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></p><p class="form-fallback" id="form-fallback" hidden>Можно также <a href="mailto:support@syntolk.ru" id="application-email">написать на support@syntolk.ru</a>.</p><noscript><p class="send-note">Для отправки формы включите JavaScript или напишите на <a href="mailto:support@syntolk.ru">support@syntolk.ru</a>.</p></noscript>
         </form>
       </div>
     </section>
@@ -887,32 +959,63 @@
       range.addEventListener('input',()=>{clients.value=range.value;updateCalculator();});
       clients.addEventListener('input',updateCalculator);payment.addEventListener('input',updateCalculator);
       [clients,payment].forEach(input=>input.addEventListener('change',()=>{input.value=String(input===clients?Math.floor(boundedValue(input)):boundedValue(input));updateCalculator();}));updateCalculator();
-      const form=document.getElementById('partner-form'),status=document.getElementById('form-status'),fallback=document.getElementById('form-fallback'),submit=form.querySelector('[type="submit"]');
+    })();
+  </script>
+  <script id="partner-application-script">
+    (()=>{
+      'use strict';
+      const form=document.getElementById('partner-form');
+      const status=document.getElementById('form-status'),fallback=document.getElementById('form-fallback');
+      const submit=form.querySelector('[type="submit"]'),submitLabel=document.getElementById('application-submit-label');
+      const controls=Array.from(form.querySelectorAll('input,textarea'));
+      const keys=['name','phone','contact','direction','audience','consent'];
+      const groups=Object.fromEntries(keys.map(key=>[key,form.querySelector('[data-field="'+key+'"]')]));
+      const errors=Object.fromEntries(keys.map(key=>[key,document.getElementById(key+'-error')]));
+      const value=key=>String(new FormData(form).get(key)||'').trim();
+      const validContact=text=>/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(text)||/^(?:@|https:\/\/t\.me\/)[a-z0-9_]{3,32}$/i.test(text);
+      const validPhone=text=>/^\+?[\d ()-]+$/.test(text)&&/^\d{10,15}$/.test(text.replace(/\D/g,''));
       let requestKey='',requestPayload='';
-      submit.disabled=false;
-      const validContact=value=>/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(value)||/^(?:@|https:\/\/t\.me\/)[a-z0-9_]{3,32}$/i.test(value);
-      const contact=document.getElementById('partner-contact');
-      contact.addEventListener('input',()=>contact.setCustomValidity(''));
-      form.addEventListener('submit',async e=>{
-        e.preventDefault();if(submit.disabled)return;
-        contact.setCustomValidity(validContact(contact.value.trim())?'':'Укажите email или Telegram в формате @username.');
-        if(!form.reportValidity())return;
-        const data=new FormData(form),application={name:String(data.get('name')).trim(),contact:String(data.get('contact')).trim(),direction:String(data.get('direction')),audience:String(data.get('audience')||'').trim(),consent:data.get('consent')==='on',website:String(data.get('website')||'')};
+      function validateField(key){
+        const text=value(key);
+        let message='';
+        if(key==='name'&&(!text||text.length>100||/[\r\n]/.test(text)))message='Укажите, как к вам обращаться.';
+        if(key==='phone'&&!validPhone(text))message=text?'Проверьте номер: от 10 до 15 цифр. Можно указать код страны с +.':'Укажите номер телефона для связи.';
+        if(key==='contact'&&(!validContact(text)||text.length>160))message='Укажите email или Telegram в формате @username.';
+        if(key==='direction'&&!text)message='Выберите одно направление.';
+        if(key==='audience'&&text.length>2000)message='Сократите описание до 2000 символов.';
+        if(key==='consent'&&!form.querySelector('[name="consent"]').checked)message='Подтвердите согласие на обработку данных.';
+        errors[key].textContent=message;errors[key].hidden=!message;
+        groups[key].classList.toggle('has-error',Boolean(message));
+        groups[key].querySelectorAll('input,textarea').forEach(control=>{if(message)control.setAttribute('aria-invalid','true');else control.removeAttribute('aria-invalid');});
+        return !message;
+      }
+      keys.forEach(key=>{
+        groups[key].addEventListener('input',()=>{if(!errors[key].hidden)validateField(key);});
+        groups[key].addEventListener('change',()=>{if(!errors[key].hidden)validateField(key);});
+      });
+      ['name','phone','contact'].forEach(key=>groups[key].querySelector('input').addEventListener('blur',()=>{if(value(key))validateField(key);}));
+      form.noValidate=true;submit.disabled=false;
+      form.addEventListener('submit',async event=>{
+        event.preventDefault();if(submit.disabled)return;
+        const invalid=keys.filter(key=>!validateField(key));
+        if(invalid.length){groups[invalid[0]].querySelector('input,textarea').focus();return;}
+        const application={name:value('name'),phone:value('phone').replace(/[ ()-]/g,''),contact:value('contact'),direction:value('direction'),audience:value('audience'),consent:true,website:value('website')};
         const payload=JSON.stringify(application);
-        const emailText=['Хочу стать партнёром Syntolk.','',`Имя: ${application.name}`,`Связь: ${application.contact}`,`Направление: ${application.direction}`,`Аудитория или проект: ${application.audience||'Не указано'}`].join('\n');
+        const emailText=['Хочу стать партнёром Syntolk.','',`Имя: ${application.name}`,`Телефон: ${application.phone}`,`Email или Telegram: ${application.contact}`,`Направление: ${application.direction}`,`Аудитория или проект: ${application.audience||'Не указано'}`].join('\n');
         document.getElementById('application-email').href='mailto:support@syntolk.ru?subject='+encodeURIComponent('Партнёрская программа Syntolk')+'&body='+encodeURIComponent(emailText);
         fallback.hidden=true;status.className='form-status';
-        if(location.protocol==='file:'){status.textContent='Это локальный предпросмотр. Отправка формы заработает после публикации сайта с обработчиком заявок.';fallback.hidden=false;return;}
+        if(location.protocol==='file:'){status.textContent='Отправка заявки будет доступна после публикации сайта. Пока можно связаться с нами по почте.';fallback.hidden=false;return;}
         if(payload!==requestPayload||!requestKey){requestKey=crypto.randomUUID();requestPayload=payload;}
-        submit.disabled=true;submit.setAttribute('aria-busy','true');submit.firstChild.textContent='Отправляем…';status.textContent='Отправляем заявку…';
+        submit.disabled=true;submit.setAttribute('aria-busy','true');submitLabel.textContent='Отправляем…';controls.forEach(control=>{control.disabled=true;});status.textContent='';
         const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),20000);
         try{
           const response=await fetch(form.dataset.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Idempotency-Key':requestKey},body:payload,signal:controller.signal,credentials:'same-origin'});
-          let result;try{result=await response.json();}catch{throw new Error('Обработчик заявок недоступен. Попробуйте позже или свяжитесь с нами по почте.');}
+          let result;try{result=await response.json();}catch{throw new Error('Не удалось подтвердить отправку. Попробуйте ещё раз или напишите нам по почте.');}
           if(!response.ok||!result||result.ok!==true||typeof result.id!=='string'){if(response.status===409){requestKey='';requestPayload='';}throw new Error(result?.message||'Не удалось отправить заявку. Попробуйте ещё раз.');}
-          status.className='form-status is-success';status.textContent='Заявка получена. Свяжемся с вами по указанному контакту. Номер заявки: '+result.id;form.reset();requestKey='';requestPayload='';
+          status.className='form-status is-success';status.textContent='Заявка отправлена. Свяжемся с вами по указанным контактам.';
+          form.reset();requestKey='';requestPayload='';status.focus();
         }catch(error){status.className='form-status is-error';status.textContent=error.name==='AbortError'?'Не удалось подтвердить отправку. Повторите попытку — дубликат заявки не создастся.':error instanceof TypeError?'Не удалось связаться с сервером. Повторите попытку или напишите нам по почте.':error.message;fallback.hidden=false;}
-        finally{clearTimeout(timeout);submit.disabled=false;submit.removeAttribute('aria-busy');submit.firstChild.textContent='Отправить заявку';}
+        finally{clearTimeout(timeout);controls.forEach(control=>{control.disabled=false;});submit.disabled=false;submit.removeAttribute('aria-busy');submitLabel.textContent='Отправить заявку';}
       });
     })();
   </script>
